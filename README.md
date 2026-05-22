@@ -1,60 +1,75 @@
-<!-- markdownlint-disable MD041 -->
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# talos
 
-<p align="center">
-  <h1 align="center">Talos Linux</h1>
-  <p align="center">A modern OS for Kubernetes.</p>
-  <p align="center">
-    <a href="https://github.com/talos-systems/talos/releases/latest"><img alt="Release" src="https://img.shields.io/github/release/talos-systems/talos.svg?logo=github&logoColor=white"></a>
-    <a href="https://github.com/talos-systems/talos/releases/latest"><img alt="Pre-release" src="https://img.shields.io/github/release-pre/talos-systems/talos.svg?label=pre-release&logo=GitHub&logoColor=white"></a>
-    <a href="https://www.bestpractices.dev/projects/7340"><img src="https://www.bestpractices.dev/projects/7340/badge" alt="OpenSSF badge"></a>
-  </p>
-</p>
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/talos)
 
----
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-**Talos** is a modern OS for running Kubernetes: secure, immutable, and minimal.
-Talos is fully open source, production-ready, and supported by the people at [Sidero Labs](https://www.SideroLabs.com/).
-All system management is done via an API - there is no shell or interactive console.
-Benefits include:
+## Architecture
 
-- **Security**: Talos reduces your attack surface: It's minimal, hardened, and immutable.
-  All API access is secured with mutual TLS (mTLS) authentication.
-- **Predictability**: Talos eliminates configuration drift, reduces unknown factors by employing immutable infrastructure ideology, and delivers atomic updates.
-- **Evolvability**: Talos simplifies your architecture, increases your agility, and always delivers current stable Kubernetes and Linux versions.
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-## Documentation
+## Install
 
-For instructions on deploying and managing Talos, see the [Documentation](https://docs.siderolabs.com/talos).
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-## Community
+```bash
+git clone https://github.com/Interested-Deving-1896/talos.git
+cd talos
+```
 
-- Support: Questions, bugs, feature requests [GitHub Discussions](https://github.com/siderolabs/talos/discussions)
-- Slack: Join our [slack channel](https://taloscommunity.slack.com/). Request access via [inviter.co](https://inviter.co/sidero-labs-community).
-- Twitter: [@SideroLabs](https://twitter.com/SideroLabs)
+## Usage
 
-If you're interested in this project and would like to help in engineering efforts or have general usage questions, we are happy to have you!
-We hold a monthly meeting that all audiences are welcome to attend.
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-We would appreciate your feedback so that we can make Talos even better!
-To do so, you can take our [survey](https://docs.google.com/forms/d/1TUna5YTYGCKot68Y9YN_CLobY6z9JzLVCq1G7DoyNjA/edit).
+## Configuration
 
-### Office Hours
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
-- When: Second Monday of every month at 16:30 UTC.
-- Where: [Google Meet](https://meet.google.com/ivb-kjfm-jfc).
+## CI
 
-> Note: You can convert the meeting hours to your [local time](https://everytimezone.com/s/599e61d6).
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-## Contributing
+## Mirror chain
 
-Contributions are welcomed and appreciated!
-See [Contributing](CONTRIBUTING.md) for our guidelines.
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/talos`](https://github.com/Interested-Deving-1896/talos) and mirrored through:
+
+```
+Interested-Deving-1896/talos  ──►  OpenOS-Project-OSP/talos  ──►  OpenOS-Project-Ecosystem-OOC/talos
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
 
 ## License
 
-<a href="https://github.com/siderolabs/talos/blob/master/LICENSE">
-  <img alt="GitHub" src="https://img.shields.io/github/license/siderolabs/talos">
-</a>
-
-Some software we distribute is under the General Public License family of licenses or other licenses that require we provide you with the source code.
-If you would like a copy of the source code for this software, please contact us via email: info at SideroLabs.com.
+<!-- AI:start:license -->
+<!-- License not detected — add a LICENSE file to this repo. -->
+<!-- AI:end:license -->
