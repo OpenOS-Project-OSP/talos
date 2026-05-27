@@ -73,3 +73,4 @@ jobs:
           path: |
             _out/grype-scan.log
           retention-days: "5"
+          if-no-files-found: error
