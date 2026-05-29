@@ -74,3 +74,4 @@ jobs:
             _out/grype-scan.log
           retention-days: "5"
           if-no-files-found: ignore
+          if: ${{ always() && steps.local-grype-scan-result.outcome == 'success' }}
