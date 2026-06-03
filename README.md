@@ -4,29 +4,39 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/talos)
 
 <!-- AI:start:what-it-does -->
-_Description pending._
+Talos Linux is a minimal, immutable Linux distribution designed specifically for running Kubernetes clusters. It simplifies cluster management by providing a secure, consistent, and automated operating system environment. It is used by infrastructure operators and platform engineers to streamline Kubernetes deployments and ensure system reliability.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
 
 <!-- AI:start:architecture -->
-Talos Linux architecture consists of several key components designed to support Kubernetes workloads. The system is built using Go and follows a modular design. The `cmd` directory contains CLI tools for interacting with Talos. The `api` directory defines the core APIs used by Talos services. The `internal` directory houses private packages for system functionality, while `config` manages configuration files. The `hack` directory includes scripts and utilities for development tasks. Talos uses workflows defined in YAML files for CI/CD, artifact management, and repository synchronization. These workflows are located in `.github/workflows`. The project structure is organized as follows:
+Talos Linux consists of several key components designed to streamline Kubernetes operations. The architecture includes the following:
 
+1. **API**: Provides a secure interface for managing the system and interacting with Kubernetes clusters.
+2. **Cmd**: Contains CLI tools for interacting with Talos Linux.
+3. **Config**: Handles configuration files and templates for system setup.
+4. **Internal**: Implements core logic and private packages for the system.
+5. **Hack**: Includes scripts and utilities for development and testing.
+6. **Workflows**: Automates CI/CD processes, repository synchronization, and artifact management.
+
+These components interact through a modular design, with the API serving as the central communication hub. The CLI tools in `cmd` interact with the API, while `internal` provides backend functionality. Configuration files in `config` define system behavior, and workflows automate operational tasks.
+
+Directory structure:
 ```plaintext
 .
-├── api                # Core API definitions
-├── cmd                # CLI tools
-├── config             # Configuration files
-├── hack               # Development scripts and utilities
-├── internal           # Private packages for system functionality
-├── workflows          # CI/CD and automation workflows
-├── .github            # GitHub-specific configurations
-├── Dockerfile         # Docker build instructions
-├── Makefile           # Build and automation tasks
-├── README.md          # Project documentation
-├── go.mod             # Go module dependencies
-├── go.sum             # Dependency checksums
-└── LICENSE            # License information
+├── api                 # API definitions and server implementation
+├── cmd                 # Command-line tools
+├── config              # Configuration templates and files
+├── internal            # Core logic and private packages
+├── hack                # Development and testing scripts
+├── workflows           # CI/CD and automation workflows
+├── .github             # GitHub-specific configurations
+├── Dockerfile          # Docker build instructions
+├── Makefile            # Build automation
+├── README.md           # Project documentation
+├── LICENSE             # License information
+├── go.mod              # Go module dependencies
+├── go.sum              # Go module checksums
 ```
 <!-- AI:end:architecture -->
 
