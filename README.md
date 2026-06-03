@@ -10,7 +10,24 @@ _Description pending._
 ## Architecture
 
 <!-- AI:start:architecture -->
-_Architecture documentation pending._
+Talos Linux architecture consists of several key components designed to support Kubernetes workloads. The system is built using Go and follows a modular design. The `cmd` directory contains CLI tools for interacting with Talos. The `api` directory defines the core APIs used by Talos services. The `internal` directory houses private packages for system functionality, while `config` manages configuration files. The `hack` directory includes scripts and utilities for development tasks. Talos uses workflows defined in YAML files for CI/CD, artifact management, and repository synchronization. These workflows are located in `.github/workflows`. The project structure is organized as follows:
+
+```plaintext
+.
+├── api                # Core API definitions
+├── cmd                # CLI tools
+├── config             # Configuration files
+├── hack               # Development scripts and utilities
+├── internal           # Private packages for system functionality
+├── workflows          # CI/CD and automation workflows
+├── .github            # GitHub-specific configurations
+├── Dockerfile         # Docker build instructions
+├── Makefile           # Build and automation tasks
+├── README.md          # Project documentation
+├── go.mod             # Go module dependencies
+├── go.sum             # Dependency checksums
+└── LICENSE            # License information
+```
 <!-- AI:end:architecture -->
 
 ## Install
