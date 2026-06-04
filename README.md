@@ -112,5 +112,5 @@ _Original project — no upstream fork._
 ## License
 
 <!-- AI:start:license -->
-<!-- License not detected — add a LICENSE file to this repo. -->
+[MPL-2.0](https://github.com/Interested-Deving-1896/talos/blob/main/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
 <!-- AI:end:license -->
