@@ -4,7 +4,7 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/talos)
 
 <!-- AI:start:what-it-does -->
-Talos Linux is a minimal, immutable Linux distribution designed specifically for running Kubernetes clusters. It simplifies cluster management by providing a secure, consistent, and automated operating system tailored for Kubernetes operators and infrastructure teams.
+Talos Linux is a minimal, immutable Linux distribution designed specifically for running Kubernetes clusters. It simplifies the management and operation of Kubernetes by providing a secure, API-driven operating system tailored for container orchestration. It is used by infrastructure operators and platform engineers to deploy and manage Kubernetes environments with a focus on security and automation.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
@@ -98,7 +98,7 @@ This repository may be a mirror. Please check the [upstream source](https://gith
 ## Origins
 
 <!-- AI:start:origins -->
-_No dependency graph found. Run `generate-dep-graph.yml` to generate `dep-graph/origins.md`._
+_Original project — no upstream fork._
 <!-- AI:end:origins -->
 
 ## Resources
