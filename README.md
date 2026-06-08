@@ -4,13 +4,37 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/talos)
 
 <!-- AI:start:what-it-does -->
-Talos Linux is a minimal, immutable Linux distribution designed specifically for running Kubernetes clusters. It simplifies the management and operation of Kubernetes by providing a secure, API-driven operating system tailored for container orchestration. It is used by infrastructure operators and platform engineers to deploy and manage Kubernetes environments with a focus on security and automation.
+Talos Linux is a minimal, immutable Linux distribution designed specifically for running Kubernetes clusters. It simplifies Kubernetes operations by providing a secure, consistent, and automated operating system environment. It is used by infrastructure engineers and platform teams to streamline Kubernetes deployments and management.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
 
 <!-- AI:start:architecture -->
-_Architecture documentation pending._
+Talos Linux is structured as a modular, Go-based project designed to support Kubernetes environments. The architecture consists of several key components:
+
+1. **API**: Defines the core APIs for interacting with Talos.
+2. **cmd**: Contains CLI tools for managing and interacting with Talos.
+3. **internal**: Houses internal packages and utilities used across the project.
+4. **config**: Manages configuration files and schemas.
+5. **hack**: Includes development and testing scripts.
+6. **api**: Provides the API definitions for Talos services.
+7. **Makefile**: Automates build, test, and deployment tasks.
+
+The components interact through well-defined APIs, enabling modularity and extensibility. The workflows in `.github/workflows` automate CI/CD, artifact management, and repository synchronization. The directory structure is as follows:
+
+```plaintext
+.
+├── api/                # API definitions
+├── cmd/                # CLI tools
+├── config/             # Configuration schemas and files
+├── hack/               # Development and testing scripts
+├── internal/           # Internal packages
+├── .github/workflows/  # CI/CD workflows
+├── Makefile            # Build and automation tasks
+├── go.mod              # Go module dependencies
+├── README.md           # Project documentation
+└── Dockerfile          # Docker build configuration
+```
 <!-- AI:end:architecture -->
 
 ## Install
@@ -33,15 +57,19 @@ cd talos
 ## CI
 
 <!-- AI:start:ci -->
-- **`ci.yaml`**: Runs unit tests, linting, and static analysis for the codebase. No secrets required.
-- **`artifacts-cron.yaml`**: Periodically builds and uploads artifacts. Requires `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
-- **`grype-scan-cron.yaml`**: Performs a vulnerability scan using Grype on a schedule. No secrets required.
-- **`integration-*.yaml`**: Various workflows for integration tests across different environments (e.g., AWS, GCP, QEMU, airgapped setups). Some workflows may require cloud provider credentials (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `GCP_SERVICE_ACCOUNT_KEY`).
-- **`lock.yaml` and `lock.yml`**: Updates dependency lock files. No secrets required.
-- **`publish-cloud-images.yaml`**: Builds and publishes cloud images. Requires `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `GCP_SERVICE_ACCOUNT_KEY`.
-- **`slack-notify.yaml` and `slack-notify-ci-failure.yaml`**: Sends notifications to Slack for CI status updates and failures. Requires `SLACK_WEBHOOK_URL`.
-- **`stale.yaml` and `stale.yml`**: Marks inactive issues and pull requests as stale. No secrets required.
-- **`update-homebrew.yaml`**: Updates the Homebrew formula for the project. Requires `HOMEBREW_GITHUB_TOKEN`.
+- **ci.yaml**: Runs unit tests, linting, and static analysis for Go code. No secrets required.
+- **integration-*.yaml**: Various workflows for running integration tests across different environments (e.g., AWS, GCP, QEMU, air-gapped setups). Requires `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `GCP_CREDENTIALS` secrets for cloud-based tests.
+- **grype-scan-cron.yaml**: Periodically scans dependencies for vulnerabilities using Grype. No secrets required.
+- **artifacts-cron.yaml**: Manages periodic artifact generation and cleanup. No secrets required.
+- **cleanup-branches.yml**: Deletes stale branches in the repository. Requires `GITHUB_TOKEN`.
+- **mirror-*.yml**: Synchronizes repositories and artifacts with external mirrors. Requires `GITHUB_TOKEN` and `MIRROR_API_KEY`.
+- **notify-poller.yml**: Sends notifications for CI events. Requires `SLACK_WEBHOOK_URL`.
+- **update-homebrew.yaml**: Updates Homebrew formulae for Talos releases. Requires `HOMEBREW_GITHUB_API_TOKEN`.
+- **validate-config.yml**: Validates project configuration files. No secrets required.
+- **stale.yml**: Marks inactive issues and pull requests as stale. Requires `GITHUB_TOKEN`.
+- **rotate-token.yml**: Rotates API tokens for external integrations. Requires `ROTATION_SECRET`.
+- **sync-*.yml**: Synchronizes forks, upstream changes, and documentation. Requires `GITHUB_TOKEN`.
+- **rebase-lts.yml**: Rebases long-term support branches. Requires `GITHUB_TOKEN`.
 <!-- AI:end:ci -->
 
 ## Mirror chain
@@ -67,6 +95,7 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 [@rsmitty](https://github.com/rsmitty) (243 commits)  
 [@Unix4ever](https://github.com/Unix4ever) (175 commits)  
 [@bradbeam](https://github.com/bradbeam) (159 commits)  
+[@Interested-Deving-1896](https://github.com/Interested-Deving-1896) (134 commits)  
 [@AlekSi](https://github.com/AlekSi) (113 commits)  
 [@shanduur](https://github.com/shanduur) (96 commits)  
 [@utkuozdemir](https://github.com/utkuozdemir) (91 commits)  
@@ -79,7 +108,6 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 [@rothgar](https://github.com/rothgar) (23 commits)  
 [@tgerla](https://github.com/tgerla) (23 commits)  
 [@Iheanacho-ai](https://github.com/Iheanacho-ai) (19 commits)  
-[@Interested-Deving-1896](https://github.com/Interested-Deving-1896) (16 commits)  
 [@mcanevet](https://github.com/mcanevet) (15 commits)  
 [@nberlee](https://github.com/nberlee) (15 commits)  
 [@laurazard](https://github.com/laurazard) (13 commits)  
@@ -92,7 +120,7 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 [@flokli](https://github.com/flokli) (6 commits)  
 [@alongwill](https://github.com/alongwill) (5 commits)  
 
-This repository may be a mirror. Please check the [upstream source](https://github.com/Interested-Deving-1896/talos) for more details.
+This repository is a mirror. Please refer to the [upstream source](https://github.com/Interested-Deving-1896/talos) for more details.
 <!-- AI:end:contributors -->
 
 ## Origins
