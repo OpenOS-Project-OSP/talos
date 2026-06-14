@@ -4,37 +4,39 @@
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/talos)
 
 <!-- AI:start:what-it-does -->
-Talos Linux is a container-optimized Linux distribution designed specifically for Kubernetes deployments. It provides a minimal, immutable operating system with automated management and security features, addressing the needs of operators and developers managing Kubernetes clusters.
+Talos Linux is a container-optimized Linux distribution designed specifically for running Kubernetes clusters. It provides a minimal, immutable operating system with automated management workflows, ensuring consistency and security for infrastructure operators and platform engineers.
 <!-- AI:end:what-it-does -->
 
 ## Architecture
 
 <!-- AI:start:architecture -->
-Talos Linux is designed as a minimal, immutable Linux distribution tailored for Kubernetes. Its architecture consists of several key components:
+Talos Linux is designed as a minimal, immutable operating system for Kubernetes. The architecture consists of several key components:
 
 1. **API Server**: Provides a gRPC-based interface for managing and configuring the system.
-2. **Controller Manager**: Handles system state reconciliation and ensures desired configurations are applied.
-3. **Kubernetes Integration**: Includes components for seamless Kubernetes bootstrap and lifecycle management.
-4. **Immutable Filesystem**: Ensures the root filesystem is read-only, enhancing security and reliability.
-5. **Networking**: Configures and manages network interfaces and settings required for Kubernetes clusters.
+2. **Controller Manager**: Handles system-level operations such as node initialization, updates, and service orchestration.
+3. **Bootstrap Process**: Ensures the system is configured and ready to join a Kubernetes cluster.
+4. **Immutable Filesystem**: Enforces immutability for the root filesystem, ensuring consistency and security.
+5. **Kubernetes Integration**: Includes built-in support for Kubernetes, with optimized configurations for cluster management.
 
 The repository is organized as follows:
 
 ```plaintext
 .
-├── api/                # Protobuf definitions for Talos API
-├── cmd/                # CLI tools and entry points
-├── config/             # Default configuration files
-├── internal/           # Internal packages for core functionality
-├── hack/               # Development and testing scripts
-├── pkg/                # Shared libraries and utilities
-├── .github/            # GitHub workflows and CI/CD configurations
-├── go.mod              # Go module dependencies
-├── Makefile            # Build and development tasks
-└── README.md           # Project overview and documentation
+├── api                # Protobuf definitions for Talos API
+├── cmd                # CLI tools and entry points
+├── config             # Configuration templates and schemas
+├── internal           # Internal libraries and utilities
+├── hack               # Development and testing scripts
+├── .github            # GitHub workflows for CI/CD
+├── Dockerfile         # Docker build configuration
+├── Makefile           # Build and utility tasks
+├── go.mod             # Go module dependencies
+├── go.sum             # Go module checksums
+├── README.md          # Project documentation
+└── SECURITY.md        # Security policies and guidelines
 ```
 
-Components interact through the API server, which acts as the central point for managing system state and communicating with Kubernetes. The immutable design ensures consistency and simplifies updates.
+Components interact via the API server, which serves as the central point for managing system state and operations. Kubernetes integration is achieved through automated workflows and configuration management.
 <!-- AI:end:architecture -->
 
 ## Install
@@ -57,16 +59,18 @@ cd talos
 ## CI
 
 <!-- AI:start:ci -->
-- `ci.yaml`: Runs unit tests, linting, and builds for the project. Requires no secrets.
-- `integration-*triggered.yaml`: Executes various integration tests across environments (e.g., AWS, GCP, QEMU). Requires secrets for cloud provider credentials and test configurations.
-- `grype-scan-cron.yaml`: Performs vulnerability scanning using Grype. Requires no secrets.
-- `artifacts-cron.yaml`: Periodically generates and uploads build artifacts. Requires secrets for artifact storage credentials.
-- `mirror-*`: Synchronizes repositories and artifacts across platforms (e.g., GitHub, GitLab, OSP). Requires secrets for access tokens and API keys.
-- `slack-notify-ci-failure.yaml`: Sends Slack notifications for CI failures. Requires `SLACK_WEBHOOK_URL` secret.
-- `update-homebrew.yaml`: Updates Homebrew formulas for the project. Requires no secrets.
-- `validate-readme-render.yml`: Checks README rendering for correctness. Requires no secrets.
-- `rotate-token.yml`: Rotates access tokens for repository operations. Requires secrets for token management.
-- `quota-monitor.yml`: Monitors resource quotas and usage. Requires no secrets.
+- `ci.yaml`: Runs unit tests, linting, and builds for the Go codebase. Requires no secrets.
+- `integration-*.yaml`: Executes various integration tests across environments (e.g., AWS, GCP, QEMU). Requires secrets for cloud provider credentials (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `GCP_SERVICE_ACCOUNT_KEY`).
+- `grype-scan-cron.yaml`: Performs vulnerability scans using Grype. Requires no secrets.
+- `artifacts-cron.yaml`: Periodically builds and publishes artifacts. Requires no secrets.
+- `mirror-*.yaml`: Synchronizes repositories and artifacts across mirrors (e.g., GitHub, GitLab, OSP). Requires secrets for API tokens (`GITHUB_TOKEN`, `GITLAB_TOKEN`).
+- `slack-notify-ci-failure.yaml`: Sends Slack notifications for CI failures. Requires `SLACK_WEBHOOK_URL`.
+- `update-homebrew.yaml`: Updates Homebrew formulas for Talos. Requires no secrets.
+- `validate-readme-render.yml`: Checks README formatting and rendering. Requires no secrets.
+- `rotate-token.yml`: Rotates API tokens for external services. Requires `GITHUB_TOKEN`, `GITLAB_TOKEN`.
+- `sync-*.yaml`: Synchronizes forks, upstream changes, and registry sources. Requires `GITHUB_TOKEN`, `GITLAB_TOKEN`.
+- `create-readmes.yml`: Generates README files for subprojects. Requires no secrets.
+- `lock.yml`: Updates dependency locks. Requires no secrets.
 <!-- AI:end:ci -->
 
 ## Mirror chain
@@ -92,7 +96,7 @@ Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-
 [@rsmitty](https://github.com/rsmitty) - 243 commits  
 [@Unix4ever](https://github.com/Unix4ever) - 175 commits  
 [@bradbeam](https://github.com/bradbeam) - 159 commits  
-[@Interested-Deving-1896](https://github.com/Interested-Deving-1896) - 148 commits  
+[@Interested-Deving-1896](https://github.com/Interested-Deving-1896) - 153 commits  
 [@AlekSi](https://github.com/AlekSi) - 113 commits  
 [@shanduur](https://github.com/shanduur) - 96 commits  
 [@utkuozdemir](https://github.com/utkuozdemir) - 91 commits  
