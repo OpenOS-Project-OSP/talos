@@ -26,7 +26,7 @@ jobs:
           - shortIntegrationTest: "yes"
             test: e2e-firewall
             withFirewall: block
-          - customCniUrl: https://raw.githubusercontent.com/projectcalico/calico/v3.32.0/manifests/canal.yaml
+          - customCniUrl: https://raw.githubusercontent.com/projectcalico/calico/v3.32.1/manifests/canal.yaml
             integrationTestRun: TestIntegration/api.ResetSuite/TestResetWithSpec
             test: e2e-canal-reset
           - shortIntegrationTest: "yes"
