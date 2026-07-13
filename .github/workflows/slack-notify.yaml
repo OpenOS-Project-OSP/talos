@@ -65,7 +65,7 @@ jobs:
                 core.setOutput('pull_request_number', prs.data[0].number)
             }
       - name: Slack Notify
-        uses: slackapi/slack-github-action@45a88b9581bfab2566dc881e2cd66d334e621e2c # version: v3.0.3
+        uses: slackapi/slack-github-action@0d95c9a7becc1e6e297d76df9bc735c44f4cbcbc # version: v3.0.5
         with:
           method: chat.postMessage
           payload: |
